@@ -1,0 +1,58 @@
+@import "variables";
+
+.projects-section {
+  //   display: flex;
+  //   flex-direction: column;
+  position: relative;
+  //   z-index: 1;
+  & .section-heading {
+    margin-bottom: 100px;
+  }
+}
+
+.project-card {
+  background-color: $primary-dark;
+  color: white;
+  min-height: 200px;
+  max-height: 250px;
+  min-width: 400px;
+  width: 670px;
+  padding: 60px 70px 0px 90px;
+  font-size: 25px;
+  line-height: 30px;
+  position: relative;
+}
+
+.project-card-right {
+  margin-left: auto;
+  justify-self: flex-end;
+  border-radius: 40px 0px 0px 40px;
+  text-align: right;
+}
+
+.project-card-left {
+  margin-right: auto;
+  justify-self: flex-start;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.project-area {
+  display: flex;
+  width: 100%;
+  min-height: 700px;
+  margin: 100px 0;
+  &:last-of-type {
+    margin-bottom: 200px;
+  }
+}
+
+.hashtags {
+  @include flex-box();
+  font-size: 22px;
+  width: 500px;
+  height: 150px;
+  background: rgba(160, 210, 235, 0.6);
+  border-radius: 10px;
+  color: #222;
+  transform: translate(70px, 80px);
+}

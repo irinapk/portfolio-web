@@ -1,0 +1,26 @@
+$primary-blue: #a0d2eb;
+$primary-pink: #d0bdf4;
+$primary-purple: #8558b2;
+$primary-dark: #4a4d60;
+$primary-light: #e6eaf4;
+
+$colors: (
+  "blue": $primary-blue,
+  "pink": $primary-pink,
+);
+
+@mixin flex-box() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin not-selectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

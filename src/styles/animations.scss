@@ -1,0 +1,56 @@
+@use "sass:math";
+@import "variables";
+
+@mixin circle {
+  border-radius: 50%;
+  position: absolute;
+  background-color: $primary-blue;
+  opacity: 0.5;
+  margin: 10px;
+  z-index: 0;
+  @include flex-box;
+  animation: floating 5s ease-in-out infinite;
+}
+
+.circle {
+  @include circle;
+}
+
+@for $i from 1 through 6 {
+  @each $key, $val in $colors {
+    .circle-#{$i}-#{$key} {
+      @include circle;
+      animation-delay: $i * 1s;
+      background-color: $val;
+    }
+  }
+}
+
+.hole {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.floating {
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  25% {
+    transform: translate(math.random(4) * 5px, math.random(4) * 10px);
+  }
+  50% {
+    transform: translate(math.random(4) * 5px, math.random(2) * 10px);
+  }
+  75% {
+    transform: translate(math.random(4) * 5px, math.random(4) * 10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}

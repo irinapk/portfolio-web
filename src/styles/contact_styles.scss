@@ -1,0 +1,61 @@
+@import "variables";
+
+.about-section {
+  min-height: 900px;
+  height: 93vh;
+  background-image: url("/images/about_bg.png");
+  background-size: cover;
+  position: relative;
+}
+
+.conclusion {
+  margin-top: 250px;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(
+    180deg,
+    rgba(160, 210, 235, 0.8) 0%,
+    rgba(160, 210, 235, 0.8) 67.71%,
+    rgba(160, 210, 235, 0.483019) 85.42%,
+    rgba(160, 210, 235, 0) 100%
+  );
+  @include flex-box();
+  flex-direction: column;
+  & p {
+    max-width: 450px;
+    font-size: 20px;
+    color: $primary-dark;
+    text-align: center;
+  }
+}
+
+.last-profile-img {
+  @include flex-box();
+  position: absolute;
+  width: 100%;
+  transform: translate(0px, 60px);
+  & img {
+    border-radius: 50%;
+    justify-self: center;
+  }
+}
+
+.top-btn {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 70px;
+  right: 100px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 20px;
+  opacity: 0.7;
+  background-color: $primary-light;
+  border: none;
+  color: $primary-dark;
+  &:hover {
+    background-color: $primary-pink;
+    opacity: 1;
+    color: white;
+  }
+}
