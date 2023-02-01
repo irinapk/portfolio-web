@@ -1,4 +1,5 @@
 @import "variables";
+@import "animations";
 
 .about-section {
   min-height: 900px;
@@ -64,6 +65,7 @@
   background-color: $primary-light;
   border: none;
   color: $primary-dark;
+  @include scaling-btn();
   &:hover {
     background-color: $primary-pink;
     opacity: 1;
@@ -71,8 +73,11 @@
   }
 }
 
-.emailBox {
-  @include flex-box();
-  min-height: 300px;
-  width: 100%;
+.photo-img {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 20px 20px 40px 20px;
+  width: 320px;
+  z-index: 15;
 }

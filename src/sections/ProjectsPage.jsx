@@ -31,7 +31,7 @@ const myProjects = [
     name: "Moy Sklad Clone (2021)",
     description: "ProjectDescription.MoySklad",
     tags: "#CloneProject   #JavaSpringBoot   #PostgreSQL  #Vaadin   #Docker   #GitLab",
-    images: ["/images/projects/sklad_clone_1.png", "/images/projects/sklad_clone_3.png", "/images/projects/sklad_clone_2.png"],
+    images: ["/images/projects/sklad_clone_1.png", "/images/projects/sklad_clone_2.png"],
   },
 ];
 
