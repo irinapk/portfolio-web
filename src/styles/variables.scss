@@ -6,7 +6,7 @@ $primary-light: #e6eaf4;
 
 $colors: (
   "blue": $primary-blue,
-  "pink": $primary-pink,
+  "pink": $primary-light,
 );
 
 @mixin flex-box() {

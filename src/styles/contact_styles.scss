@@ -12,13 +12,7 @@
   margin-top: 250px;
   width: 100%;
   height: 500px;
-  background: linear-gradient(
-    180deg,
-    rgba(160, 210, 235, 0.8) 0%,
-    rgba(160, 210, 235, 0.8) 67.71%,
-    rgba(160, 210, 235, 0.483019) 85.42%,
-    rgba(160, 210, 235, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(160, 210, 235, 0.8) 0%, rgba(160, 210, 235, 0.8) 67.71%, rgba(160, 210, 235, 0.483019) 85.42%, rgba(160, 210, 235, 0) 100%);
   @include flex-box();
   flex-direction: column;
   & p {
@@ -26,6 +20,7 @@
     font-size: 20px;
     color: $primary-dark;
     text-align: center;
+    word-break: keep-all;
   }
 }
 
@@ -40,6 +35,24 @@
   }
 }
 
+.sns-box {
+  @include flex-box();
+  gap: 15px;
+  & i {
+    font-size: 35px;
+    &:hover {
+      color: $primary-blue;
+      cursor: pointer;
+    }
+  }
+  & svg:hover {
+    cursor: pointer;
+    & path:nth-child(2) {
+      fill: $primary-blue;
+    }
+  }
+}
+
 .top-btn {
   height: 60px;
   width: 60px;
@@ -47,8 +60,6 @@
   bottom: 70px;
   right: 100px;
   border-radius: 50%;
-  font-weight: 700;
-  font-size: 20px;
   opacity: 0.7;
   background-color: $primary-light;
   border: none;
@@ -58,4 +69,10 @@
     opacity: 1;
     color: white;
   }
+}
+
+.emailBox {
+  @include flex-box();
+  min-height: 300px;
+  width: 100%;
 }
