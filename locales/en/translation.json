@@ -1,0 +1,18 @@
+{
+  "HeyThere": "<h1 class='intro-heading'>Hey there!\n\nI am <span style=color:#8558b2>Irina</span>, an aspired junior <span style=color:#8558b2>frontend</span> developer based in Seoul, South Korea.</h1>",
+  "Biography": {
+    "First": "After graduating university back in 2019, I've worked as a freelancer for global marketing firm, then joined a sales management team at IT solution company. That was where it all started.",
+    "Second": "In 2021, I discovered this new passion for programming, learned to code and began to pursue a dream of becoming a software developer. Although my first PO was Java, today I want to focus more on mastering my frontend skills to build web applications that would be easy to navigate and pleasant to use."
+  },
+  "ProjectDescription": {
+    "Felicity": "a personal study project - a simple minimalistic web application for team collaboration and task management",
+    "AdminPortal": "admin portal for homepage content management such as uploading and removing images, videos and new articles",
+    "GuardianPortal": "company's homepage and Guardian-CCS management portal to view user activities, login data and control settings",
+    "DevelopersSite": "a website for developers to share API and other technical documentation",
+    "MoySklad": "clone website - a group study project to practice backend and frontend development as well as team work"
+  },
+  "Conclusion": {
+    "First": "I love food, animals and music. I also enjoy exploring new places and spending quality time with my family, friends and my cat. During my free time I like watching movies, and sometimes I try to teach myself playing guitar or I read books (psychology, novels, fantasy, etc.)",
+    "Second": "Thank you for your interest! If you would like to ask any questions or to chat, feel free to email me or find me on social media :)"
+  }
+}
