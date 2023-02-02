@@ -17,6 +17,7 @@ const logoImages = [
   { imageUrl: "/images/logo/reactjs.png", imageName: "reactjs-logo" },
   { imageUrl: "/images/logo/nextjs.png", imageName: "nextjs-logo" },
   { imageUrl: "/images/logo/sass.png", imageName: "sass-logo" },
+  { imageUrl: "/images/logo/figma.png", imageName: "figma-logo" },
 ];
 
 export default function SkillsPage() {

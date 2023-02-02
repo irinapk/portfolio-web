@@ -17,7 +17,7 @@ export default function IntroPage() {
         <div>
           <p>{t("Biography.First")}</p>
           <p>{t("Biography.Second")}</p>
-          <a href="/files/CV_draft.pdf" download>
+          <a href="/files/Irina_CV_ENG.pdf" download>
             <button className="donwload-btn">Download CV</button>
           </a>
         </div>

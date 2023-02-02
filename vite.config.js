@@ -3,7 +3,4 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/portfolio-web/",
-  // build: { outDir: "dist" },
-  // publicDir: "/",
 });
