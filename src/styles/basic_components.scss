@@ -75,8 +75,6 @@
   position: relative;
   z-index: 2;
   @include flex-box();
-  //   min-height: 640px;
-  //   height: calc(100vh - 390px);
   margin: 20px 40px;
   align-items: flex-start;
   & p {

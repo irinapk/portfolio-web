@@ -2,54 +2,65 @@
 @import "animations";
 
 .about-section {
-  min-height: 900px;
-  height: 93vh;
+  min-height: 800px;
   background-image: url("/images/about_bg.png");
   background-size: cover;
   position: relative;
 }
 
 .conclusion {
-  margin-top: 250px;
+  margin-top: 150px;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background: linear-gradient(180deg, rgba(160, 210, 235, 0.8) 0%, rgba(160, 210, 235, 0.8) 67.71%, rgba(160, 210, 235, 0.483019) 85.42%, rgba(160, 210, 235, 0) 100%);
   @include flex-box();
-  flex-direction: column;
+  & > div {
+    @include flex-box();
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 60px;
+  }
   & p {
     max-width: 450px;
+    height: 70px;
     font-size: 20px;
     color: $primary-dark;
-    text-align: center;
+    text-align: left;
     word-break: keep-all;
+  }
+  & img {
+    border-radius: 50%;
+    margin-right: 70px;
   }
 }
 
 .last-profile-img {
   @include flex-box();
   position: absolute;
+  justify-content: flex-start;
   width: 100%;
-  transform: translate(0px, 60px);
+  z-index: 20;
   & img {
     border-radius: 50%;
-    justify-self: center;
+    justify-self: flex-start;
   }
 }
 
 .sns-box {
   @include flex-box();
+  justify-content: flex-start;
   gap: 15px;
   & i {
     font-size: 35px;
     &:hover {
-      color: $primary-blue;
+      color: $primary-purple;
       cursor: pointer;
     }
   }
   & svg:hover {
     cursor: pointer;
     & path:nth-child(2) {
-      fill: $primary-blue;
+      fill: $primary-purple;
     }
   }
 }
@@ -61,13 +72,13 @@
   bottom: 70px;
   right: 100px;
   border-radius: 50%;
-  opacity: 0.7;
-  background-color: $primary-light;
   border: none;
+  opacity: 0.6;
+  background-color: $primary-pink;
   color: $primary-dark;
   @include scaling-btn();
   &:hover {
-    background-color: $primary-pink;
+    background-color: $primary-dark;
     opacity: 1;
     color: white;
   }

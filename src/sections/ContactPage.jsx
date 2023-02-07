@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FloatingCircle } from "../components/MovingElements";
 import "../styles/contact_styles.scss";
 
 export default function ContactPage() {
   const { t } = useTranslation();
-
-  const [typingEmail, setTypingEmail] = useState(false);
-
   function onGoUp() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -15,30 +11,24 @@ export default function ContactPage() {
   return (
     <section className="about-section">
       <div className="section-heading">
-        <h1 className="shadow-text">ABOUT</h1>
-        <h1>More about me...</h1>
+        <h1 className="shadow-text">CONTACT</h1>
+        <h1>Get in touch</h1>
       </div>
-
-      <div className="last-profile-img">
-        <img src="/images/profile_2.png" alt={"irina_photo"} width={250} height={250} />
-      </div>
-
       <div className="conclusion">
-        <Photo url="/images/personal_photo_1.png" name="photo_1" position={{ top: 300, left: 50 }} rotate="-8deg" />
-        <Photo url="/images/personal_photo_2.png" name="photo_2" position={{ top: 520, left: 150 }} rotate="4deg" />
-        <Photo url="/images/personal_photo_3.jpg" name="photo_3" position={{ top: 300, right: 100 }} rotate="3deg" />
-        <Photo url="/images/personal_photo_4.jpg" name="photo_4" position={{ top: 580, right: 200 }} rotate="-2.5deg" />
-        <p>{t("Conclusion.First")}</p>
-        <br />
-        <p>{t("Conclusion.Second")}</p>
-      </div>
+        <img src="/images/profile_2.png" alt={"irina_photo"} width={250} height={250} />
+        <div>
+          <p>{t("Conclusion.Second")}</p>
 
-      <div className="sns-box">
-        <i class="bi bi-envelope-at-fill" onClick={() => setTypingEmail(true)}></i>
-        <KakaoLogo onClick={() => window.open("/images/KakaoTalk_friend.png")} />
-        <i class="bi bi-instagram" onClick={() => window.open("https://www.instagram.com/irinapark8/")}></i>
-        <i class="bi bi-messenger" onClick={() => window.open("https://m.me/irina.park.8")}></i>
-        <i class="bi bi-github" onClick={() => window.open("https://github.com/irinapk/")}></i>
+          <div className="sns-box">
+            <a href="mailto:irina.park.8@gmail.com" target="_blank">
+              <i class="bi bi-envelope-at-fill"></i>
+            </a>
+            <KakaoLogo onClick={() => window.open("/images/KakaoTalk_friend.png")} />
+            <i class="bi bi-instagram" onClick={() => window.open("https://www.instagram.com/irinapark8/")}></i>
+            <i class="bi bi-messenger" onClick={() => window.open("https://m.me/irina.park.8")}></i>
+            <i class="bi bi-github" onClick={() => window.open("https://github.com/irinapk/")}></i>
+          </div>
+        </div>
       </div>
 
       <FloatingCircle diameter={250} shape="donut" position={{ top: 0, left: 20 }} />
@@ -47,19 +37,13 @@ export default function ContactPage() {
       <FloatingCircle diameter={350} position={{ top: 0, right: -50 }} />
       <FloatingCircle className="circle-1-blue" diameter={70} shape="donut" position={{ top: 100, right: "20%" }} />
       <FloatingCircle className="circle-3-blue" diameter={100} position={{ top: 150, right: "25%" }} />
-      <FloatingCircle diameter={30} position={{ bottom: "12%", left: "20%" }} />
-      <FloatingCircle className="circle-2-blue" diameter={90} shape="donut" position={{ bottom: "10%", left: "10%" }} />
-      <FloatingCircle className="circle-5-blue" diameter={120} position={{ bottom: "15%", left: "25%" }} />
+      <FloatingCircle diameter={30} className="circle-2-pink" position={{ bottom: "12%", left: "40%" }} />
+      <FloatingCircle className="circle-2-pink" diameter={90} shape="donut" position={{ bottom: "10%", left: "30%" }} />
+      <FloatingCircle className="circle-5-pink" diameter={120} position={{ bottom: "15%", left: "45%" }} />
 
       <button className="top-btn" onClick={onGoUp}>
         <i class="bi bi-arrow-up-circle" style={{ fontSize: "30px" }}></i>
       </button>
-
-      {typingEmail && (
-        <div className="emailBox">
-          <textarea />
-        </div>
-      )}
     </section>
   );
 }
@@ -67,7 +51,7 @@ export default function ContactPage() {
 function KakaoLogo(props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 256 256" onClick={props?.onClick}>
-      <path fill="#FFFFFF" d="M256 236c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h216c11.046 0 20 8.954 20 20v216z" />
+      <path fill="#FFFFFF00" d="M256 236c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h216c11.046 0 20 8.954 20 20v216z" />
       <path
         fill="#222222"
         d="M128 36C70.562 36 24 72.713 24 118c0 29.279 19.466 54.97 48.748 69.477-1.593 5.494-10.237 35.344-10.581 37.689 0 0-.207 1.762.934 2.434s2.483.15 2.483.15c3.272-.457 37.943-24.811 43.944-29.04 5.995.849 12.168 1.29 18.472 1.29 57.438 0 104-36.712 104-82 0-45.287-46.562-82-104-82z"
