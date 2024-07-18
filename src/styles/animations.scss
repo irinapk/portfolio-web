@@ -61,6 +61,18 @@
   }
 }
 
+@keyframes floating-arrow {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
 @keyframes scaling {
   0% {
     transform: scale(1);

@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "baseUrl": "./src",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -18,7 +19,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.4",
-    "swiper": "^8.4.6"
+    "react-router": "^6.24.1",
+    "react-router-dom": "^6.24.1",
+    "swiper": "^11.0.7",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

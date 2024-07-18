@@ -6,6 +6,9 @@ import IntroPage from "./sections/IntroPage";
 import ProjectsPage from "./sections/ProjectsPage";
 import ContactPage from "./sections/ContactPage";
 import SkillsPage from "./sections/SkillsPage";
+import TopBar from "./components/TopBar.jsx";
+import {Route, Routes} from 'react-router';
+import Homepage from "./pages/Homepage.jsx";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -20,14 +23,19 @@ function App() {
 
   return (
     <div className="app">
-      <button className="lng-btn" onClick={switchLanguage}>
-        <i className="bi bi-globe-americas" style={{ fontSize: "16px" }}></i>
-        {i18n.language === "ko" ? "KO" : "EN"}
-      </button>
-      <IntroPage />
-      <SkillsPage />
-      <ProjectsPage />
-      <ContactPage />
+      <TopBar />
+      {/*<button className="lng-btn" onClick={switchLanguage}>*/}
+      {/*  <i className="bi bi-globe-americas" style={{ fontSize: "16px" }}></i>*/}
+      {/*  {i18n.language === "ko" ? "KO" : "EN"}*/}
+      {/*</button>*/}
+      {/*<IntroPage />*/}
+      {/*<SkillsPage />*/}
+      {/*<ProjectsPage />*/}
+      {/*<ContactPage />*/}
+
+      <Routes>
+        <Route path={"/"} element={<Homepage/>}/>
+      </Routes>
     </div>
   );
 }

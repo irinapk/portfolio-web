@@ -4,6 +4,13 @@ $primary-purple: #8558b2;
 $primary-dark: #4a4d60;
 $primary-light: #e6eaf4;
 
+$primary-mint: #4EEAFF;
+$light-mint: #C0E3E7;
+$bright-mint: #69D4E2;
+$text-dark: #171414;
+$dark-green: #1E2A2C;
+$light-red: #E44C63;
+
 $colors: (
   "blue": $primary-blue,
   "pink": $primary-light,
@@ -16,6 +23,13 @@ $colors: (
   align-items: center;
 }
 
+@mixin flex($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
 @mixin not-selectable() {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -23,4 +37,45 @@ $colors: (
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+
+@mixin gradientAnimation($bg-gradient){
+  background-size: 100%;
+  background-image: linear-gradient(#171414 0%, #171414 100%);
+  position: relative;
+  z-index: 100;
+  &:before {
+    background-image: $bg-gradient;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity 500ms;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin btn() {
+  width: 240px;
+  height: 48px;
+  text-align: center;
+  padding: 12px 20px;
+  border: 1px solid $bright-mint;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  @include gradientAnimation(linear-gradient(300deg, #69D4E2 0%, #DDFBFF 63%, #AEF5FF 82%, #84E1EE 100%));
+  &:hover {
+    color: $text-dark;
+  }
 }

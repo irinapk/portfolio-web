@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay, FreeMode } from "swiper";
+import { Autoplay, FreeMode } from "swiper/modules";
 
 const logoImages = [
   { imageUrl: "/images/logo/html.png", imageName: "html-logo" },

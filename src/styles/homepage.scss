@@ -1,0 +1,192 @@
+@import "variables";
+
+.homepage {
+  min-height: 3000px;
+  min-width: 1000px;
+  padding: 124px 20px;
+  background: linear-gradient(180deg, #1E2A2C 4%, #171414 21%, #161714 43%, #171414 61%, #1D2728 75%, #1E2B2D 100%);
+  h1 {
+    color: $light-mint;
+    font-size: 48px;
+    letter-spacing: 6px;
+  }
+  hr {
+    width: 400px;
+    border-color: #4EEAFF;
+    margin: 0 0 20px 0;
+  }
+  article {
+    position: relative;
+    padding: 0 140px;
+  }
+}
+
+#about-me {
+  @include flex(flex-start, space-between);
+  margin: 70px 0 80px;
+  img {
+    margin-right: 20px;
+    filter: grayscale(0.5);
+    &:hover {
+      transition: 300ms ease-out;
+      filter: none;
+      cursor: url("/images/emoji.svg"), auto;
+    }
+  }
+}
+
+.intro-text {
+  max-width: 660px;
+  margin: 80px 0 40px;
+  @include flex(flex-start, flex-start, column);
+  gap: 24px;
+  p {
+    font-size: 18px;
+  }
+  a {
+    margin: 62px 35px 0 auto;
+  }
+  button {
+    box-shadow: 4px 4px 4px 0 #69D4E225;
+  }
+}
+
+.arrow-page-down {
+  animation: floating-arrow 2s ease-in-out infinite;
+}
+
+#skills {
+  @include flex(flex-start, flex-start, column);
+  margin-top: 40px;
+  .skills-summary {
+    position: relative;
+    padding: 10px 0 40px;
+    @include flex(flex-start, flex-start, column);
+    p {
+      font-size: 18px;
+      max-width: 980px;
+    }
+  }
+}
+
+.skills-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  //grid-template-rows: 380px 230px;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  & > div {
+    @include flex(center, space-evenly);
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 40px 30px;
+    &:first-of-type, &:last-of-type {
+      grid-column: span 2;
+    }
+    border: 1px solid $light-mint;
+  }
+}
+
+.header-title {
+  position: relative;
+  padding-top: 70px;
+}
+
+#projects, #personal-blog {
+  margin-top: 40px;
+  min-height: 400px;
+}
+
+#projects {
+  .arrow-page-down {
+    @include flex();
+  }
+  & > div:nth-child(3) {
+    width: 100%;
+    @include flex(flex-start, flex-start, column);
+    gap: 20px;
+  }
+}
+
+.prj-box {
+  height: 500px;
+  width: 100%;
+  border: 1px solid $light-mint;
+}
+
+
+#personal-blog {
+  padding-bottom: 120px;
+  .arrow-page-down {
+    @include flex(center, flex-end);
+  }
+}
+
+.blog-swiper {
+  width: 100%;
+  padding-bottom: 40px !important;
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 8px 4px #69D4E2;
+    background: #69D4E2;
+    margin: 0 10px !important;
+  }
+}
+
+.blog-box {
+  width: 100%;
+  //max-width: 600px;
+  //width: 400px;
+  min-width: 400px;
+  height: 600px;
+  border: 1px solid $light-mint;
+  &:hover {
+    cursor: pointer;
+    border-color: $light-red;
+    box-shadow: 0 0 10px 5px #DF1F2A30;
+  }
+}
+
+
+#contact-me {
+  margin-top: 100px;
+
+  & > div:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+      flex: 1;
+      min-width: 400px;
+      padding-top: 30px;
+      img {
+        margin-top: 40px;
+      }
+    }
+    & > div:nth-child(1) {
+      p {
+        max-width: 600px;
+        margin-bottom: 20px;
+      }
+    }
+    & > div.email-form {
+      @include flex(flex-end, flex-start, column);
+      gap: 30px;
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid $light-mint;
+        background: #AEF5FF20;
+        color: white;
+        font-size: 18px;
+        padding: 14px 24px;
+        &:focus, &:focus-visible {
+          outline: none;
+          border: 1px solid $light-mint;
+        }
+      }
+    }
+  }
+}
