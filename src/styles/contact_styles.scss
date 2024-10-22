@@ -47,20 +47,22 @@
 }
 
 .sns-box {
-  @include flex-box();
-  justify-content: flex-start;
+  //@include flex-box();
+  //justify-content: flex-start;
   gap: 15px;
   & i {
     font-size: 35px;
+    color: black;
     &:hover {
-      color: $primary-purple;
+      //color: $primary-purple;
+      color: $light-mint;
       cursor: pointer;
     }
   }
   & svg:hover {
     cursor: pointer;
     & path:nth-child(2) {
-      fill: $primary-purple;
+      fill: $light-mint;
     }
   }
 }

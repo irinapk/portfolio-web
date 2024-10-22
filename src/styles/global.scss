@@ -78,6 +78,12 @@ p {
   margin-block-end: 0;
 }
 
+h1, h2, h3, h4, p, span {
+  &:hover {
+    cursor: default;
+  }
+}
+
 button {
   //border-radius: 5px;
   //display: flex;
@@ -102,12 +108,12 @@ div {
 
 ::-moz-selection {
   color: white;
-  background: $dark-green;
+  background: #47878F;
 }
 
 ::selection {
   color: white;
-  background: $dark-green;
+  background: #47878F;
 }
 
 ::-webkit-scrollbar,
