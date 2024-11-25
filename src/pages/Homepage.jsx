@@ -87,7 +87,7 @@ export default function Homepage() {
   function ProjectCard({project, index}) {
     return (
       <div className="prj-box" onClick={() => navigate('/project?id=' + index)}>
-        <img src={"src/assets/images/projects/" + project.coverImg} alt="project-cover"/>
+        <img src={"/images/projects/" + project.coverImg} alt="project-cover"/>
         <div className="hover-bg-effect">
           <h1>{project.title}</h1>
           <p>{project.tags.map((tag) => ("#" + tag + " "))}</p>

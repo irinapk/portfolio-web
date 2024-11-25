@@ -27,18 +27,18 @@ export default function ProjectPage() {
         <div className={pageLoaded ? 'fade-in' : ''}>
           <h1>{prjData.title}</h1>
           <div className="block-title">
-            <img src="src/assets/images/icons/building.png" alt="docs-icon" height={22}/>
+            <img src="/images/icons/building.png" alt="docs-icon" height={22}/>
             <h2>{prjData.company}</h2>
           </div>
           <div className="block-title">
-            <img src="src/assets/images/icons/docs.png" alt="docs-icon" height={22}/>
+            <img src="/images/icons/docs.png" alt="docs-icon" height={22}/>
             <h3>Description</h3>
           </div>
           <p>
             {prjData.description}
           </p>
           <div className="block-title">
-            <img src="src/assets/images/icons/stack.png" alt="docs-icon" height={22}/>
+            <img src="/images/icons/stack.png" alt="docs-icon" height={22}/>
             <h3>Project stack</h3>
           </div>
           <ul>
@@ -47,7 +47,7 @@ export default function ProjectPage() {
             ))}
           </ul>
           <div className="block-title">
-            <img src="src/assets/images/icons/code.png" alt="docs-icon" height={22}/>
+            <img src="/images/icons/code.png" alt="docs-icon" height={22}/>
             <h3>Main contributions</h3>
           </div>
           <ul>
@@ -64,9 +64,9 @@ export default function ProjectPage() {
             {prjData?.img.map((img, idx) => (
               <SwiperSlide key={"prj-img-slide-" + idx}>
                 {img.includes("mp4") ?
-                  <video controls loop autoPlay src={"src/assets/images/projects/"+img} type="video/mp4" />
+                  <video controls loop autoPlay src={"/images/projects/"+img} type="video/mp4" />
                   :
-                  <img src={"src/assets/images/projects/"+img} alt="image"/>
+                  <img src={"/images/projects/"+img} alt="image"/>
                 }
               </SwiperSlide>
             ))}
