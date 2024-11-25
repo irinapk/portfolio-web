@@ -3,6 +3,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee:wght@200;300;400;600;700;800;900&display=swap");
 
 .app {
   width: calc(100vw - 6px);
@@ -78,6 +79,12 @@ p {
   margin-block-end: 0;
 }
 
+h1, h2, h3, h4, p, span {
+  &:hover {
+    cursor: default;
+  }
+}
+
 button {
   //border-radius: 5px;
   //display: flex;
@@ -102,12 +109,12 @@ div {
 
 ::-moz-selection {
   color: white;
-  background: $dark-green;
+  background: #47878F;
 }
 
 ::selection {
   color: white;
-  background: $dark-green;
+  background: #47878F;
 }
 
 ::-webkit-scrollbar,

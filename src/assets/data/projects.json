@@ -1,0 +1,466 @@
+{
+  "data": [
+    {
+      "title": "GUARDIAN-CCS HOMEPAGE",
+      "company": "FNS Value Ltd.",
+      "coverImg": "fns_guardian/cover3.png",
+      "img": [
+        "fns_guardian/LOGIN_POPUP.png",
+        "fns_guardian/Main_PC.png",
+        "fns_guardian/Lis6t603.png",
+        "fns_guardian/List03.png",
+        "fns_guardian/List0333.png",
+        "fns_guardian/필터팝업_달력선택.png",
+        "fns_guardian/List03000.png",
+        "fns_guardian/List04567891.png"
+      ],
+      "description": "a main homepage website and part of the core product - a management system for customers using GCCS passwordless authentication services to view user activities and control settings",
+      "stack": [
+        "ReactJS, NextJS",
+        "Java SpringBoot",
+        "MySQL",
+        "Material UI",
+        "ChartJS",
+        "Jenkins"
+      ],
+      "work": [
+        "adding new features to the existing website",
+        "creating reusable components",
+        "project migration to NextJS and complete design renewal",
+        "worked with charts, infinite scrolling, tables, custom tree views, etc.",
+        "bug fixes and maintenance"
+      ],
+      "tags": [
+        "React",
+        "NextJS",
+        "Java",
+        "Back-end"
+      ],
+      "year": "2021"
+    },
+    {
+      "title": "GUARDIAN ADMIN PORTAL",
+      "company": "FNS Value Ltd.",
+      "coverImg": "fns_guardian/cover2.png",
+      "img": [
+        "fns_admin/image 63.png",
+        "fns_admin/게시물 등록.png",
+        "fns_admin/특허 수정.png",
+        "fns_admin/공통코드 관리_코드.png",
+        "fns_admin/뉴스 동영상 게시물 상세.png",
+        "fns_admin/카테고리 관리 툴팁.png",
+        "fns_admin/뉴스.png"
+      ],
+      "description": "a system for company's managers to easily organize and modify contents (such as news articles, video materials and certifications) displayed on the main homepage",
+      "stack": [
+        "ReactJS",
+        "Java SpringBoot",
+        "MySQL",
+        "Material UI"
+      ],
+      "work": [
+        "created new web application from scratch (actively participated in project planning closely collaborating with designers and other developers)",
+        "added image drag & drop feature and items order management",
+        "custom components, file uploads, youtube preview etc.",
+        "bug fixes and maintenance"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2022"
+    },
+    {
+      "title": "GUARDIAN Developers",
+      "company": "FNS Value Ltd.",
+      "coverImg": "fns_developers/cover.png",
+      "img": [
+        "fns_developers/082638.png",
+        "fns_developers/082659.png"
+      ],
+      "description": "API documentation website for the company's core product, designed to offer technical support and enhance communication with overseas teams",
+      "stack": [
+        "Docusaurus",
+        "React",
+        "MDX (Markdown)",
+        "Jenkins"
+      ],
+      "work": [
+        "website generation, setting and deployment",
+        "writing the documentation",
+        "theme customization",
+        "content updates"
+      ],
+      "tags": [
+        "Publishing",
+        "Back-end"
+      ],
+      "year": "2022"
+    },
+    {
+      "title": "'SUMiTS FM' for SK Shieldus",
+      "company": "SimBiz Korea",
+      "coverImg": "sk_shieldus/cover.png",
+      "img": [
+        "sk_shieldus/135549.png",
+        "sk_shieldus/004403.png",
+        "sk_shieldus/175952.png",
+        "sk_shieldus/140040.png",
+        "sk_shieldus/002328.png",
+        "sk_shieldus/141425.png"
+      ],
+      "description": "Large scale platform for work management customized for SK business structure and its employees",
+      "stack": [
+        "ReactJS",
+        "TOAST UI",
+        "Java SpringBoot",
+        "PostgreSQL",
+        "SCSS"
+      ],
+      "work": [
+        "helped migrate company’s original ERP system to React",
+        "creating reusable custom components and pages",
+        "handling file uploads, downloads and online editing",
+        "dashboard design renewal"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "Virtual Sensor System",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_virtual_sensor/074131.png",
+      "img": [
+        "techdas_virtual_sensor/074131.png",
+        "techdas_virtual_sensor/074150.png",
+        "techdas_virtual_sensor/074214.png"
+      ],
+      "description": "an ML platform to flexibly respond to/manage ML model development and data work cycles. It allowed users to extract test datasets, evaluate its performance using ML models and visualize results",
+      "stack": [
+        "ReactJS",
+        "Python"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "Energy Sensor Validation System \n해양에너지",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_hy_energy/170018.png",
+      "img": [
+        "techdas_hy_energy/170034.png",
+        "techdas_hy_energy/170216.png",
+        "techdas_hy_energy/154125.png",
+        "techdas_hy_energy/154148.png",
+        "techdas_hy_energy/162654.png",
+        "techdas_hy_energy/162842.png"
+      ],
+      "description": "a system to prevent accidents related to city gas supply and CNG charging stations, providing pressure monitoring by city and district in South Korea",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS",
+        "SASS",
+        "TUI Grid"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "FSRU Monitoring & Optimization System",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_frsu/175427.png",
+      "img": [
+        "techdas_frsu/175427.png",
+        "techdas_frsu/175526.png",
+        "techdas_frsu/175910.png",
+        "techdas_frsu/175922.png",
+        "techdas_frsu/151058.png",
+        "techdas_frsu/151118.png"
+      ],
+      "description": "a system for factories to monitor gas and electricity supplies, visualize current status, edit constraints and optimize scheduling & equipment operations",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS",
+        "SASS"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "POSCO 발전 12호 #5 최적화 시스템",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_rist/190305.png",
+      "img": [
+        "techdas_rist/190305.png",
+        "techdas_rist/190350.png"
+      ],
+      "description": "a ML-based optimization system for SCR operations in power generation facilities, used to predict conversion rates and outputs",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS",
+        "SASS"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "Hyundai Steel SCR 가상센서를 통한 이상진단 시스템",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_hds_scr2024/015742.png",
+      "img": [
+        "techdas_hds_scr2024/015742.png",
+        "techdas_hds_scr2024/015653.png",
+        "techdas_hds_scr2024/015549.png"
+      ],
+      "description": "this system aims to maintain NOx emission standards while minimizing ammonia slip, thereby reducing production losses, energy inefficiencies, and environmental issues caused by heat exchanger fouling",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS",
+        "SASS"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "Felicity Planner",
+      "company": "Study Project",
+      "coverImg": "felicity/021240.png",
+      "img": [
+        "felicity/020441.png",
+        "felicity/021240.png",
+        "felicity/021707.png",
+        "felicity/021843.png"
+      ],
+      "description": "a project to practice working with NextJS framework, crea",
+      "stack": [
+        "NextJS (v13)",
+        "HarperDB",
+        "Material UI",
+        "react-beautiful-dnd"
+      ],
+      "work": [
+        "practiced designing a new project",
+        "used HarperDB's REST interface for handling API requests"
+      ],
+      "tags": [
+        "NextJS", "Back-end", "Study projects"
+      ],
+      "year": "2023"
+    },
+    {
+      "title": "Amoring Admin",
+      "company": "Mellowing Factory",
+      "coverImg": "amoring/cover.png",
+      "img": [
+        "amoring/053306.png",
+        "amoring/053330.png",
+        "amoring/054012.png",
+        "amoring/54921.png",
+        "amoring/settings.mp4"
+      ],
+      "description": "an administrative platform for a new dating app, enabling access to user and business client information, data management, and application settings configuration",
+      "stack": [
+        "ReactJS",
+        "Tailwind",
+        "Typescript",
+        "GraphQL",
+        "Fastify (NodeJS)"
+      ],
+      "work": [
+        "practiced working with Typescript components",
+        "learned about GraphQL queries and mutations",
+        "designed the settings configuration page"
+      ],
+      "tags": [
+        "React",
+        "Typescript"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "Yaong Store App",
+      "company": "(주)야옹상회",
+      "coverImg": "yaong_store/054731.png",
+      "img": [
+        "yaong_store/메인페이지_B타입.png",
+        "yaong_store/마이페이지.png",
+        "yaong_store/061107240.mp4",
+        "yaong_store/game.png",
+        "yaong_store/pool.png",
+        "yaong_store/수영장_예약날짜 선택.png",
+        "yaong_store/Map.png",
+        "yaong_store/티켓 예약하기_평상선택(선택완료).png",
+        "yaong_store/티켓 예약 완료 + 럭키스핀.png",
+        "yaong_store/Reservation ticket.png"
+      ],
+      "description": "an all-in-one platform offering point and coupon rewards through various activities (mobile games, ads, step count), along with a swimming pool booking system for the summer season",
+      "stack": [
+        "ReactJS",
+        "Java SpringBoot",
+        "MySQL",
+        "AWS",
+        "SASS",
+        "Flutter"
+      ],
+      "work": [
+        "publishing in React",
+        "created reusable React components",
+        "developed a seat map, including the seat selection functionality",
+        "added basic configurations (context, routing)",
+        "provided tech support throughout the whole project development process"
+      ],
+      "tags": [
+        "React",
+        "Publishing"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "Yaong Store Admin",
+      "company": "(주)야옹상회",
+      "coverImg": "yaong_store/081540.png",
+      "img": [
+        "yaong_store/081540.png",
+        "yaong_store/081619.png",
+        "yaong_store/081641.png",
+        "yaong_store/173127.png",
+        "yaong_store/081728.png"
+      ],
+      "description": "an admin web platform for 3 types of users to manage Yaong Store mobile app's reward system, swimming pool bookings (payments, visits), pricing and scheduling",
+      "stack": [
+        "ReactJS",
+        "Java SpringBoot",
+        "MySQL",
+        "AWS",
+        "SASS",
+        "Kakao API"
+      ],
+      "work": [
+        "full front-end and back-end development",
+        "AWS deployment, CI/CD pipeline check-ups",
+        "integrated Kakao business channel notifications",
+        "bug fixes and continuous tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "현대제철 인천공장 대형압연 가상센서",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_hds_incheon/cover.png",
+      "img": [
+        "techdas_hds_incheon/main.png",
+        "techdas_hds_incheon/1.메인화면(다운로드창).png",
+        "techdas_hds_incheon/2.이상진단 및 공정 이상 감지.png",
+        "techdas_hds_incheon/3.LNG 가이던스 (공칭 규격 선택).png",
+        "techdas_hds_incheon/4.열효율.png",
+        "techdas_hds_incheon/NOx저감가이던스.png"
+      ],
+      "description": "a system to use by a factory that aims to address such issues as monitoring sensor and TDLS analyzer failures, and help with detecting plant anomalies, analyzing causes of excessive NOx emissions in exhaust gases, and monitoring combustion efficiency ",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "현대제철 전력설비 병렬 운전 최적화",
+      "company": "TechDas Co., Ltd",
+      "coverImg": "techdas_hds_blow/020106.png",
+      "img": [
+        "techdas_hds_blow/020208.png",
+        "techdas_hds_blow/020125.png",
+        "techdas_hds_blow/020143.png"
+      ],
+      "description": "a system that improves energy efficiency and ensures operational stability of the factory by supporting such features as blower performance monitoring, anomaly detection, and efficiency management",
+      "stack": [
+        "ReactJS",
+        "Python",
+        "ChartJS"
+      ],
+      "work": [
+        "full front-end development",
+        "bug fixes and tech support"
+      ],
+      "tags": [
+        "React"
+      ],
+      "year": "2024"
+    },
+    {
+      "title": "신한투자증권 품질관리",
+      "company": "RyznSquare",
+      "coverImg": "shinhan_testsystem/183336.png",
+      "img": [
+        "shinhan_testsystem/183336.png",
+        "shinhan_testsystem/183309.png",
+        "shinhan_testsystem/183300.png",
+        "shinhan_testsystem/183251.png",
+        "shinhan_testsystem/183232.png",
+        "shinhan_testsystem/183216.png",
+        "shinhan_testsystem/183208.png"
+      ],
+      "description": "a test system to manage and display code test results, code coverage information, performance analysis, test automation, etc.",
+      "stack": [
+        "Vue.js",
+        "vue-good-table-next",
+        "vue-datepicker"
+      ],
+      "work": [
+        "initial project configuration",
+        "publishing in VueJS 3",
+        "creating reusable Vue components"
+      ],
+      "tags": [
+        "Vue",
+        "Publishing"
+      ],
+      "year": "2024"
+    }
+  ]
+}
