@@ -3,7 +3,7 @@ import ArrowDown from '../assets/images/select-arrow.svg';
 
 export default function SelectBox(props) {
 
-  const {id, defaultValue, height = 100, options = []} = props;
+  const {id, defaultValue, height = 100, options = [], onSelect = () => {}} = props;
   const [open, setOpen] = useState(false);
   const selectId = `select-${id}-${Math.ceil(Math.random() * 10)}`;
 
@@ -24,19 +24,27 @@ export default function SelectBox(props) {
     }
   }, [open])
 
+  const onClickArrow = (e) => {
+    e.stopPropagation();
+    setOpen(true);
+  }
+
   return (
     <div className="select-box"
          onClick={() => setOpen(!open)}>
       <span id={selectId}>
         {selected ?? ""}
-        <ArrowDown />
+        <ArrowDown onClick={onClickArrow} />
       </span>
       <div className={!open ? "select-options" : "select-options add-overflow"}
            style={open ? {height: height, maxHeight: height, borderWidth: 1} : {height: 0, maxHeight: 0, borderWidth: 0}}>
         <ul>
           {options.map((option, idx) => (
             <li key={id + "-option-" + idx}
-                onClick={() => setSelected(option)}>
+                onClick={() => {
+                  setSelected(option);
+                  onSelect(option);
+                }}>
               {option}
             </li>
           ))}

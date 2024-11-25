@@ -1,58 +1,59 @@
 import "../styles/homepage.scss";
-import ProfileImg from "../assets/images/profile-pic.png";
-import ArrowDown from '../assets/images/arrow_down.svg';
-import KeyboardImg from '../assets/images/keyboard.png';
+import ProfileImg from "@assets/images/profile-pic.png";
+import ArrowDown from '@assets/images/arrow_down.svg';
+import KeyboardImg from '@assets/images/keyboard.png';
 import {Autoplay, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import CssLogo from '../assets/images/logos/front/image 10.png';
-import JsLogo from '../assets/images/logos/front/image 11.png';
-import ReactLogo from '../assets/images/logos/front/image 12.png';
-import HtmlLogo from '../assets/images/logos/front/image 32.png';
-import SassLogo from '../assets/images/logos/front/image 36.png';
-import TsLogo from '../assets/images/logos/front/image 49.png';
-import NextLogo from '../assets/images/logos/front/image 50.png';
-import MuiLogo from '../assets/images/logos/front/image 60.png';
-import BoostrapLogo from '../assets/images/logos/front/image 64.png';
-import TailwindLogo from '../assets/images/logos/front/image 65.png';
+import CssLogo from '@assets/images/logos/front/image 10.png';
+import JsLogo from '@assets/images/logos/front/image 11.png';
+import ReactLogo from '@assets/images/logos/front/image 12.png';
+import HtmlLogo from '@assets/images/logos/front/image 32.png';
+import SassLogo from '@assets/images/logos/front/image 36.png';
+import TsLogo from '@assets/images/logos/front/image 49.png';
+import NextLogo from '@assets/images/logos/front/image 50.png';
+import MuiLogo from '@assets/images/logos/front/image 60.png';
+import BoostrapLogo from '@assets/images/logos/front/image 64.png';
+import TailwindLogo from '@assets/images/logos/front/image 65.png';
+import VueLogo from '@assets/images/logos/front/image 51.png';
 
-import MySqlLogo from '../assets/images/logos/back/image 7.png';
-import HarperLogo from '../assets/images/logos/back/image 34.png';
-import JavaLogo from '../assets/images/logos/back/image 35.png';
-import SpringLogo from '../assets/images/logos/back/image 56.png';
-import ExpressLogo from '../assets/images/logos/back/image 61.png';
-import GraphLogo from '../assets/images/logos/back/image 63.png';
+import MySqlLogo from '@assets/images/logos/back/image 7.png';
+import HarperLogo from '@assets/images/logos/back/image 34.png';
+import JavaLogo from '@assets/images/logos/back/image 35.png';
+import SpringLogo from '@assets/images/logos/back/image 56.png';
+import ExpressLogo from '@assets/images/logos/back/image 61.png';
+import GraphLogo from '@assets/images/logos/back/image 63.png';
 
-import AwsLogo from '../assets/images/logos/tools/image 57.png';
-import VisualLogo from '../assets/images/logos/tools/image 59.png';
-import FirebaseLogo from '../assets/images/logos/tools/image 62.png';
-import JenkinsLogo from '../assets/images/logos/tools/image 77.png';
-import IdeaLogo from '../assets/images/logos/tools/image 78.png';
+import AwsLogo from '@assets/images/logos/tools/image 57.png';
+import VisualLogo from '@assets/images/logos/tools/image 59.png';
+import FirebaseLogo from '@assets/images/logos/tools/image 62.png';
+import JenkinsLogo from '@assets/images/logos/tools/image 77.png';
+import IdeaLogo from '@assets/images/logos/tools/image 78.png';
 
-import GitLabLogo from '../assets/images/logos/collaboration/image 18.png';
-import FigmaLogo from '../assets/images/logos/collaboration/image 52.png';
-import NotionLogo from '../assets/images/logos/collaboration/image 53.png';
-import SlackLogo from '../assets/images/logos/collaboration/image 54.png';
-import GithubLogo from '../assets/images/logos/collaboration/image 55.png';
-import {useState} from "react";
+import GitLabLogo from '@assets/images/logos/collaboration/image 18.png';
+import FigmaLogo from '@assets/images/logos/collaboration/image 52.png';
+import NotionLogo from '@assets/images/logos/collaboration/image 53.png';
+import SlackLogo from '@assets/images/logos/collaboration/image 54.png';
+import GithubLogo from '@assets/images/logos/collaboration/image 55.png';
+import {useEffect, useState} from "react";
 import SelectBox from "../components/SelectBox";
+import {useNavigate} from "react-router";
 
+import {data as projects} from "@assets/data/projects.json";
 
-
+function haveCommonItems(arr1, arr2) {
+  return arr1.some(item => arr2.includes(item));
+}
 
 export default function Homepage() {
 
-  const frontLogoList = [HtmlLogo, JsLogo, CssLogo, ReactLogo, TsLogo, TailwindLogo, NextLogo, BoostrapLogo, SassLogo, MuiLogo];
+  const navigate = useNavigate();
+
+  const frontLogoList = [HtmlLogo, JsLogo, CssLogo, ReactLogo, TsLogo, TailwindLogo, NextLogo, BoostrapLogo, SassLogo, MuiLogo, VueLogo];
   const backLogoList = [JavaLogo, MySqlLogo, SpringLogo, GraphLogo, ExpressLogo, HarperLogo];
   const toolsLogoList = [AwsLogo, IdeaLogo, VisualLogo, FirebaseLogo, JenkinsLogo];
   const collabLogoList = [GithubLogo, NotionLogo, SlackLogo, FigmaLogo, GitLabLogo];
 
-  const projects = [
-    {},
-    {},
-    {},
-    {},
-    {},
-  ]
+  const [projectData, setProjectData] = useState(projects);
 
   const blogs = [
     {},
@@ -62,23 +63,57 @@ export default function Homepage() {
     {},
   ]
 
-  const filterNames = ["React", "Java / Springboot", "NextJS", "Typescript", "Back-end", "Study projects"]
+  const filterNames = ["React", "Java", "NextJS", "Typescript", "Back-end", "Study projects", "Publishing", "Vue"];
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedYear, setSelectedYear] = useState("All");
 
   function FilterTag({name, onClick}) {
-
-    const [selected, setSelected] = useState(false);
-
-    const onClickTag = () => {
-      setSelected(!selected);
-      onClick();
-    }
+    let selected = selectedTags.includes(name);
 
     return (
-      <div onClick={onClickTag} className={`filter-tag${selected ? " selected-tag" : ""}`}>
+      <div onClick={() => onClick(name, !selected)} className={`filter-tag${selected ? " selected-tag" : ""}`}>
         <span>{name}</span>
       </div>
     )
   }
+
+  function onSelectFilter(name, isAdded) {
+    if (isAdded && !selectedTags.includes(name)) {
+      setSelectedTags(prev => [...prev, name])
+    } else setSelectedTags(prev => prev.filter(el => el !== name));
+  }
+
+
+  function ProjectCard({project, index}) {
+    return (
+      <div className="prj-box" onClick={() => navigate('/project?id=' + index)}>
+        <img src={"src/assets/images/projects/" + project.coverImg} alt="project-cover"/>
+        <div className="hover-bg-effect">
+          <h1>{project.title}</h1>
+          <p>{project.tags.map((tag) => ("#" + tag + " "))}</p>
+        </div>
+      </div>
+    )
+  }
+
+
+
+  useEffect(() => {
+    if (selectedYear === "All") {
+      if (selectedTags.length > 0) {
+        setProjectData(projects.filter(el => haveCommonItems(el.tags, selectedTags)))
+      } else if (projectData !== projects) {
+        setProjectData(projects);
+      }
+    } else {
+      if (selectedTags.length > 0) {
+        setProjectData(projects.filter(el => el.year === selectedYear && haveCommonItems(el.tags, selectedTags)))
+      } else {
+        setProjectData(projects.filter(el => el.year === selectedYear));
+      }
+    }
+  }, [selectedTags, selectedYear])
+
 
   return (
     <main className="homepage">
@@ -88,10 +123,11 @@ export default function Homepage() {
           <h1>Hey there!</h1>
           <hr/>
           <p>I'm <b>Irina</b>, an aspiring full-stack developer based in Seoul. As the IT industry evolves rapidly,
-            my commitment as a software developer is to stay abreast of new technologies, continually enhance my skills, and
+            my commitment as a software developer is to stay abreast of new technologies, continually enhance my skills,
+            and
             maximize my potential.</p>
           <p>I love bringing websites to life with style and functionality. Whether it's crafting pixel-perfect layouts
-            or adding interactive elements, I thrive on creating web magic that's both visually appealing and
+            or adding interactive elements, I thrive on creating web apps that are both visually appealing and
             user-friendly.</p>
           <p>Take a peek at my portfolio and let's bring your next project to life together!
           </p>
@@ -102,10 +138,9 @@ export default function Homepage() {
         <img src={ProfileImg} alt="profile" height={600}/>
       </article>
 
-
       <article id="skills">
         <div className="arrow-page-down">
-          <ArrowDown />
+          <ArrowDown/>
         </div>
         <div className="header-title">
           <h1 className="shadow-text">STACK</h1>
@@ -115,34 +150,36 @@ export default function Homepage() {
         <div className="skills-summary">
           <p>Since 2021, I've had the opportunity to contribute to over <strong>13 various projects</strong>,
             mostly working on the development of administration and monitoring systems for businesses.</p>
-          <p> My current passion lies in React.js, making front-end development and website publishing my areas of expertise.</p>
-          <p>I enjoy witnessing ideas transform from concepts and content into interactive solutions that deliver tangible value.</p>
+          <p> My current passion lies in React.js, making front-end development and website publishing my areas of
+            expertise.</p>
+          <p>I enjoy witnessing ideas transform from concepts and content into interactive solutions that deliver
+            tangible value.</p>
         </div>
 
         <div className="skills-grid">
           <div>
             <h2>Front-end development</h2>
             {frontLogoList.map((imgSrc, idx) => (
-              <img src={imgSrc} key={"logo-front-"+idx} alt={"logo-front-"+idx}
+              <img src={imgSrc} key={"logo-front-" + idx} alt={"logo-front-" + idx}
                    height={70} style={{margin: '0 20px'}}/>
             ))}
           </div>
           <div>
             <h2>Back-end development</h2>
             {backLogoList.map((imgSrc, idx) => (
-              <img src={imgSrc} key={"logo-front-"+idx} alt={"logo-front-"+idx} height={60}/>
+              <img src={imgSrc} key={"logo-front-" + idx} alt={"logo-front-" + idx} height={60}/>
             ))}
           </div>
           <div>
             <h2>Infrastructure & Tools</h2>
             {toolsLogoList.map((imgSrc, idx) => (
-              <img src={imgSrc} key={"logo-front-"+idx} alt={"logo-front-"+idx} height={60}/>
+              <img src={imgSrc} key={"logo-front-" + idx} alt={"logo-front-" + idx} height={60}/>
             ))}
           </div>
           <div>
             <h2>Collaboration</h2>
             {collabLogoList.map((imgSrc, idx) => (
-              <img src={imgSrc} key={"logo-front-"+idx} alt={"logo-front-"+idx} height={70}/>
+              <img src={imgSrc} key={"logo-front-" + idx} alt={"logo-front-" + idx} height={70}/>
             ))}
           </div>
         </div>
@@ -151,7 +188,7 @@ export default function Homepage() {
 
       <article id="projects">
         <div className="arrow-page-down">
-          <ArrowDown />
+          <ArrowDown/>
         </div>
         <div className="header-title">
           <h1 className="shadow-text">PROJECTS</h1>
@@ -159,55 +196,52 @@ export default function Homepage() {
           <hr/>
         </div>
         <div>
-          <SelectBox id={"year-select"} defaultValue={"All"}
-                     height={144}
-                     options={["All", 2021, 2022, 2023, 2024]}/>
+          <SelectBox id={"year-select"} defaultValue={selectedYear}
+                     height={144} onSelect={(year) => setSelectedYear(year)}
+                     options={["All", "2021", "2022", "2023", "2024"]}/>
           <div className="project-filters">
             {filterNames.map((name) => (
-              <FilterTag name={name} key={name} onClick={() => {}}/>
+              <FilterTag name={name} key={name} onClick={onSelectFilter}/>
             ))}
           </div>
-
-          {projects.map((project, idx) => (
-            <div key={"prj-"+idx} className="prj-box">
-
-            </div>
+          {projectData.map((project, idx) => (
+            <ProjectCard key={"prj-" + idx} index={idx} project={project}/>
           ))}
         </div>
       </article>
 
-      <article id="personal-blog">
-        <div className="arrow-page-down">
-          <ArrowDown />
-        </div>
-        <div className="header-title">
-          <h1 className="shadow-text">BLOG</h1>
-          <h1>Personal blog</h1>
-          <hr/>
-        </div>
-        <Swiper pagination={{clickable: true}} modules={[Pagination, Autoplay]}
-                slidesPerView={1} slidesPerGroup={1}
-                breakpoints={{
-                  1000: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2
-                  },
-                  1400: {
-                    slidesPerView: 3,
-                    slidesPerGroup: 3
-                  }
-                }}
-                spaceBetween={20} autoplay={false} loop={true}
-                className="blog-swiper">
-          {blogs.map((blog, idx) => (
-            <SwiperSlide key={"blog-slide-" + idx}>
-              <div className="blog-box">
+      {/*<article id="personal-blog">*/}
+      {/*  <div className="arrow-page-down">*/}
+      {/*    <ArrowDown/>*/}
+      {/*  </div>*/}
+      {/*  <div className="header-title">*/}
+      {/*    <h1 className="shadow-text">BLOG</h1>*/}
+      {/*    <h1>Personal blog</h1>*/}
+      {/*    <hr/>*/}
+      {/*  </div>*/}
+      {/*  <Swiper pagination={{clickable: true}} modules={[Pagination, Autoplay]}*/}
+      {/*          slidesPerView={1} slidesPerGroup={1}*/}
+      {/*          breakpoints={{*/}
+      {/*            1000: {*/}
+      {/*              slidesPerView: 2,*/}
+      {/*              slidesPerGroup: 2*/}
+      {/*            },*/}
+      {/*            1400: {*/}
+      {/*              slidesPerView: 3,*/}
+      {/*              slidesPerGroup: 3*/}
+      {/*            }*/}
+      {/*          }}*/}
+      {/*          spaceBetween={20} autoplay={false} loop={true}*/}
+      {/*          className="blog-swiper">*/}
+      {/*    {blogs.map((blog, idx) => (*/}
+      {/*      <SwiperSlide key={"blog-slide-" + idx}>*/}
+      {/*        <div className="blog-box">*/}
 
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </article>
+      {/*        </div>*/}
+      {/*      </SwiperSlide>*/}
+      {/*    ))}*/}
+      {/*  </Swiper>*/}
+      {/*</article>*/}
 
       <article id="contact-me">
         <div className="header-title">
@@ -222,10 +256,10 @@ export default function Homepage() {
               please feel free to email me or connect with me on social media :)</p>
             <img src={KeyboardImg} alt="keyboard" width={'70%'}/>
           </div>
-          <div className="email-form">
-            <textarea id="email-content" rows="10" />
-            <button type="button" className="basic-btn">Send</button>
-          </div>
+          {/*<div className="email-form">*/}
+          {/*  <textarea id="email-content" rows="10"/>*/}
+          {/*  <button type="button" className="basic-btn">Send</button>*/}
+          {/*</div>*/}
         </div>
       </article>
 
@@ -246,7 +280,8 @@ export default function Homepage() {
 function KakaoLogo(props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 256 256" onClick={props?.onClick}>
-      <path fill="#FFFFFF00" d="M256 236c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h216c11.046 0 20 8.954 20 20v216z" />
+      <path fill="#FFFFFF00"
+            d="M256 236c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h216c11.046 0 20 8.954 20 20v216z"/>
       <path
         fill="#000000"
         d="M128 36C70.562 36 24 72.713 24 118c0 29.279 19.466 54.97 48.748 69.477-1.593 5.494-10.237 35.344-10.581 37.689 0 0-.207 1.762.934 2.434s2.483.15 2.483.15c3.272-.457 37.943-24.811 43.944-29.04 5.995.849 12.168 1.29 18.472 1.29 57.438 0 104-36.712 104-82 0-45.287-46.562-82-104-82z"

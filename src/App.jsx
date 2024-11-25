@@ -9,6 +9,7 @@ import SkillsPage from "./sections/SkillsPage";
 import TopBar from "./components/TopBar.jsx";
 import {Route, Routes} from 'react-router';
 import Homepage from "./pages/Homepage.jsx";
+import ProjectPage from "./pages/ProjectPage.jsx";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -35,6 +36,7 @@ function App() {
 
       <Routes>
         <Route path={"/"} element={<Homepage/>}/>
+        <Route path={"/project"} element={<ProjectPage/>}/>
       </Routes>
     </div>
   );
