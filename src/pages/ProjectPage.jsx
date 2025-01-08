@@ -8,6 +8,8 @@ import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 
 export default function ProjectPage() {
 
+  // comment test
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search); // Parse query string
   const prjId = queryParams ? parseInt(queryParams.get('id')) : null;
