@@ -20,6 +20,7 @@ export default function ProjectPage() {
     setPageLoaded(true);
   }, [])
 
+  console.log("test")
 
   return (
     <main className="project-page">
