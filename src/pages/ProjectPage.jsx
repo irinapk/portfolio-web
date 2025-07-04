@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import React, {useEffect, useState} from "react";
 import {Autoplay, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import ImageViewer from "@/components/ImageViewer.jsx";
 
 
 export default function ProjectPage() {
@@ -14,16 +15,15 @@ export default function ProjectPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search); // Parse query string
   const prjId = queryParams ? parseInt(queryParams.get('id')) : null;
-  const prjData = data[prjId];
+  const prjData = data.find((p) => p.id === prjId);
 
   const [pageLoaded, setPageLoaded] = useState(false);
   const [swiperRef, setSwiperRef] = useState(null);
 
   useEffect(() => {
     setPageLoaded(true);
+    window.scrollTo(0, 0);
   }, [])
-
-  console.log("test")
 
   return (
     <main className="project-page">
@@ -70,7 +70,7 @@ export default function ProjectPage() {
                 {img.includes("mp4") ?
                   <video controls loop autoPlay src={"/images/projects/"+img} type="video/mp4" />
                   :
-                  <img src={"/images/projects/"+img} alt="image"/>
+                  <ImageViewer src={"/images/projects/"+img} alt="image" />
                 }
               </SwiperSlide>
             ))}
@@ -81,6 +81,20 @@ export default function ProjectPage() {
             <button type='button' className="basic-btn"
                     onClick={() => swiperRef?.slideNext()}>{"NEXT >"}</button>
           </div>
+
+          <div className="media-container">
+            {prjData?.img.map((img, idx) => (
+              <React.Fragment key={"prj-img-no-" + idx}>
+                {img.includes("mp4") ?
+                  <video controls loop autoPlay src={"/images/projects/"+img} type="video/mp4" />
+                  :
+                  <ImageViewer src={"/images/projects/"+img} alt="image" />
+                }
+              </React.Fragment>
+            ))}
+          </div>
+
+
         </div>
       </section>
 

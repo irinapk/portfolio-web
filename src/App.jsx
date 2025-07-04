@@ -1,11 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import "swiper/css/bundle";
 import "./styles/global.scss";
 import "./styles/basic_components.scss";
-import IntroPage from "./sections/IntroPage";
-import ProjectsPage from "./sections/ProjectsPage";
-import ContactPage from "./sections/ContactPage";
-import SkillsPage from "./sections/SkillsPage";
+import { ImageOverlayProvider } from './components/ImageOverlayContext';
 import TopBar from "./components/TopBar.jsx";
 import {Route, Routes} from 'react-router';
 import Homepage from "./pages/Homepage.jsx";
@@ -23,22 +21,20 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <TopBar />
-      {/*<button className="lng-btn" onClick={switchLanguage}>*/}
-      {/*  <i className="bi bi-globe-americas" style={{ fontSize: "16px" }}></i>*/}
-      {/*  {i18n.language === "ko" ? "KO" : "EN"}*/}
-      {/*</button>*/}
-      {/*<IntroPage />*/}
-      {/*<SkillsPage />*/}
-      {/*<ProjectsPage />*/}
-      {/*<ContactPage />*/}
+    <ImageOverlayProvider>
+      <div className="app">
+        <TopBar />
+        {/*<button className="lng-btn" onClick={switchLanguage}>*/}
+        {/*  <i className="bi bi-globe-americas" style={{ fontSize: "16px" }}></i>*/}
+        {/*  {i18n.language === "ko" ? "KO" : "EN"}*/}
+        {/*</button>*/}
 
-      <Routes>
-        <Route path={"/"} element={<Homepage/>}/>
-        <Route path={"/project"} element={<ProjectPage/>}/>
-      </Routes>
-    </div>
+        <Routes>
+          <Route path={"/"} element={<Homepage/>}/>
+          <Route path={"/project"} element={<ProjectPage/>}/>
+        </Routes>
+      </div>
+    </ImageOverlayProvider>
   );
 }
 

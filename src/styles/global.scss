@@ -1,4 +1,5 @@
-@import "variables";
+@use "variables" as *;
+@use "animations";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
@@ -17,7 +18,7 @@
   height: 100%;
 }
 
-.swiper-slide {
+.project-swiper .swiper-slide {
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,6 +41,7 @@
 body {
   margin: 0;
   color: white;
+  background: linear-gradient(180deg, #1E2A2C 4%, #171414 21%, #161714 43%, #171414 61%, #1D2728 75%, #1E2B2D 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: overlay;
@@ -64,11 +66,6 @@ code {
 
 h1 {
   font-weight: 600;
-  //font-size: 36px;
-  //line-height: 42px;
-  //white-space: pre-wrap;
-  //text-align: center;
-  //color: $primary-dark;
   @include not-selectable();
   margin-block-start: 0;
   margin-block-end: 0;
@@ -77,21 +74,17 @@ h1 {
 p {
   margin-block-start: 0;
   margin-block-end: 0;
+  word-break: keep-all;
 }
 
 h1, h2, h3, h4, p, span {
+  word-break: keep-all;
   &:hover {
     cursor: default;
   }
 }
 
 button {
-  //border-radius: 5px;
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-  //gap: 6px;
-  //padding: 3px 15px;
   &:hover {
     cursor: pointer;
     transition-duration: 200ms;
@@ -107,6 +100,15 @@ div {
   box-sizing: border-box;
 }
 
+@include media(mobile) {
+  .app, .homepage {
+    min-width: 400px;
+  }
+  section {
+    min-width: 400px;
+  }
+}
+
 ::-moz-selection {
   color: white;
   background: #47878F;
@@ -119,7 +121,6 @@ div {
 
 ::-webkit-scrollbar,
 *::-webkit-scrollbar {
-  //background: none !important;
   background-color: #171414 !important;
   width: 6px;
   height: 6px;

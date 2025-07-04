@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 .homepage {
   min-height: 3000px;
@@ -19,6 +19,20 @@
     position: relative;
     padding: 0 140px;
   }
+
+  @include media(mobile) {
+    width: 100%;
+    min-width: 400px;
+    h1 {
+      font-size: 40px;
+    }
+    hr {
+      width: 200px;
+    }
+    article {
+      padding: 0 40px;
+    }
+  }
 }
 
 #about-me {
@@ -33,15 +47,44 @@
       cursor: url("/images/emoji.svg"), auto;
     }
   }
+
+  .shadow-text {
+    top: -80px;
+    left: 20px;
+    white-space: nowrap;
+  }
+
+  @include media(mobile) {
+    margin: 20px 0 50px;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 20px;
+    .intro-text {
+      max-width: calc(100% - 40px);
+      .shadow-text {
+        top: -50px;
+        font-size: 80px !important;
+      }
+    }
+    img {
+      width: 80%;
+      height: auto;
+      margin-right: 0;
+    }
+  }
 }
 
 .intro-text {
+  position: relative;
   max-width: 660px;
   margin: 80px 0 40px;
   @include flex(flex-start, flex-start, column);
   gap: 24px;
   p {
     font-size: 18px;
+    @include media(mobile) {
+      font-size: 16px;
+    }
   }
   a {
     margin: 62px 35px 0 auto;
@@ -64,6 +107,9 @@
     @include flex(flex-start, flex-start, column);
     p {
       font-size: 18px;
+      @include media(mobile) {
+        font-size: 16px;
+      }
       max-width: 980px;
     }
   }
@@ -117,11 +163,35 @@
   //        rgba(137, 229, 242, 0.15) 50%,
   //        rgba(137, 229, 242, 0.05) 77%, transparent 100%);
   background: linear-gradient(0deg, transparent 0%, rgba(137, 229, 242, 0.06) 50%, transparent 100%);
+  gap: 15px;
+  & i {
+    font-size: 35px;
+    color: black;
+    &:hover {
+      //color: $primary-purple;
+      color: $light-mint;
+      cursor: pointer;
+    }
+  }
+  & svg:hover {
+    cursor: pointer;
+    & path:nth-child(2) {
+      fill: $light-mint;
+    }
+  }
 }
 
 .header-title {
   position: relative;
   padding-top: 70px;
+  @include media(mobile) {
+    overflow-x: hidden;
+    .shadow-text {
+      top: 20px;
+      left: 40px;
+      font-size: 80px !important;
+    }
+  }
 }
 
 #projects, #personal-blog {
@@ -143,6 +213,7 @@
 .project-filters {
   display: flex;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 .prj-box {
@@ -172,9 +243,9 @@
       display: none;
     }
     & > h1 {
-      max-width: 400px;
+      max-width: 420px;
       font-size: 46px;
-      font-family: "Bungee";
+      //font-family: "Bungee";
       color: #FFF;
       letter-spacing: 0;
     }
@@ -184,11 +255,19 @@
     .hover-bg-effect {
       width: 100%;
       opacity: 1;
-      background: rgba(62, 84, 87, 0.8);
+      background: linear-gradient(to right, rgba(62,84,87,1), rgba(62,84,87,.3));
       transition-duration: 200ms;
       & > * {
         display: block;
       }
+    }
+  }
+
+  @include media(mobile) {
+    height: 220px;
+    .hover-bg-effect > h1 {
+      max-width: 300px;
+      font-size: 24px;
     }
   }
 }
@@ -247,6 +326,9 @@
         max-width: 600px;
         margin-bottom: 20px;
         font-size: 18px;
+        @include media(mobile) {
+          font-size: 16px;
+        }
       }
     }
     & > div.email-form {
@@ -264,6 +346,12 @@
           outline: none;
           border: 1px solid $light-mint;
         }
+      }
+    }
+
+    @include media(mobile) {
+      & > div {
+        min-width: 100%;
       }
     }
   }

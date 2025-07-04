@@ -16,6 +16,11 @@ $colors: (
   "pink": $primary-light,
 );
 
+$breakpoints: (
+  "mobile": 700px,
+  "tablet": 1200px
+);
+
 @mixin flex-box() {
   display: flex;
   flex-direction: row;
@@ -77,5 +82,12 @@ $colors: (
   @include gradientAnimation(linear-gradient(300deg, #69D4E2 0%, #DDFBFF 63%, #AEF5FF 82%, #84E1EE 100%));
   &:hover {
     color: $text-dark;
+  }
+}
+
+@mixin media($bp) {
+  $value: map-get($breakpoints, $bp);
+  @media (max-width: $value) {
+    @content;
   }
 }

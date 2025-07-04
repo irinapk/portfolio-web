@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 .app:has(.project-page) {
   width: 100vw;
@@ -9,9 +9,10 @@
 
 .project-page {
   min-width: 1100px;
+  min-height: 900px;
   background: linear-gradient(180deg, #171414 0%, #171414 17%, #224347 100%);
   height: calc(100vh - 190px);
-  padding: 130px 60px 60px;
+  padding: 130px 60px 50px;
 }
 
 .project-page-grid {
@@ -47,8 +48,6 @@
     width: 100%;
     min-width: 600px;
   }
-
-
   .slider-control {
     @include flex();
     margin: 40px auto 0;
@@ -89,4 +88,52 @@
     max-height: 800px;
   }
 
+}
+
+.media-container {
+  display: none;
+}
+
+@include media(mobile) {
+  main {
+    box-sizing: border-box;
+  }
+  .project-page {
+    width: 100%;
+    min-width: 400px;
+    height: 100%;
+    padding: 130px 30px 50px;
+  }
+
+  .fade-in {
+    border-right: none !important;
+    border-bottom: 1px solid $bright-mint;
+  }
+
+  .project-page-grid {
+    display: flex;
+    flex-direction: column;
+    min-width: 330px;
+
+    & > div:last-of-type {
+      max-width: 100%;
+      width: 100%;
+      min-width: 330px;
+    }
+  }
+
+  .project-swiper, .slider-control {
+    display: none !important;
+  }
+
+  .media-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    img, video {
+      width: 100%;
+
+    }
+  }
 }

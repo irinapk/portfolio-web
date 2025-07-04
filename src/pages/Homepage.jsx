@@ -1,9 +1,8 @@
 import "../styles/homepage.scss";
+import { motion, useScroll } from "motion/react"
 import ProfileImg from "@assets/images/profile-pic.png";
 import ArrowDown from '@assets/images/arrow_down.svg';
 import KeyboardImg from '@assets/images/keyboard.png';
-import {Autoplay, Pagination} from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
 import CssLogo from '@assets/images/logos/front/image 10.png';
 import JsLogo from '@assets/images/logos/front/image 11.png';
 import ReactLogo from '@assets/images/logos/front/image 12.png';
@@ -22,6 +21,7 @@ import JavaLogo from '@assets/images/logos/back/image 35.png';
 import SpringLogo from '@assets/images/logos/back/image 56.png';
 import ExpressLogo from '@assets/images/logos/back/image 61.png';
 import GraphLogo from '@assets/images/logos/back/image 63.png';
+import SupabaseLogo from '@assets/images/logos/back/supabase-logo-icon_1.png';
 
 import AwsLogo from '@assets/images/logos/tools/image 57.png';
 import VisualLogo from '@assets/images/logos/tools/image 59.png';
@@ -34,11 +34,15 @@ import FigmaLogo from '@assets/images/logos/collaboration/image 52.png';
 import NotionLogo from '@assets/images/logos/collaboration/image 53.png';
 import SlackLogo from '@assets/images/logos/collaboration/image 54.png';
 import GithubLogo from '@assets/images/logos/collaboration/image 55.png';
+import MattermostLogo from '@assets/images/logos/collaboration/mattermost.png';
 import {useEffect, useState} from "react";
 import SelectBox from "../components/SelectBox";
 import {useNavigate} from "react-router";
 
+
+
 import {data as projects} from "@assets/data/projects.json";
+
 
 function haveCommonItems(arr1, arr2) {
   return arr1.some(item => arr2.includes(item));
@@ -49,9 +53,9 @@ export default function Homepage() {
   const navigate = useNavigate();
 
   const frontLogoList = [HtmlLogo, JsLogo, CssLogo, ReactLogo, TsLogo, TailwindLogo, NextLogo, BoostrapLogo, SassLogo, MuiLogo, VueLogo];
-  const backLogoList = [JavaLogo, MySqlLogo, SpringLogo, GraphLogo, ExpressLogo, HarperLogo];
+  const backLogoList = [JavaLogo, MySqlLogo, SpringLogo, GraphLogo, ExpressLogo, HarperLogo, SupabaseLogo];
   const toolsLogoList = [AwsLogo, IdeaLogo, VisualLogo, FirebaseLogo, JenkinsLogo];
-  const collabLogoList = [GithubLogo, NotionLogo, SlackLogo, FigmaLogo, GitLabLogo];
+  const collabLogoList = [GithubLogo, NotionLogo, SlackLogo, FigmaLogo, MattermostLogo, GitLabLogo];
 
   const [projectData, setProjectData] = useState(projects);
 
@@ -84,9 +88,9 @@ export default function Homepage() {
   }
 
 
-  function ProjectCard({project, index}) {
+  function ProjectCard({project}) {
     return (
-      <div className="prj-box" onClick={() => navigate('/project?id=' + index)}>
+      <div className="prj-box" onClick={() => navigate('/project?id=' + project.id)}>
         <img src={"/images/projects/" + project.coverImg} alt="project-cover"/>
         <div className="hover-bg-effect">
           <h1>{project.title}</h1>
@@ -114,12 +118,37 @@ export default function Homepage() {
     }
   }, [selectedTags, selectedYear])
 
+  const variants = {
+    offscreen: {
+      y: -30,
+    },
+    onscreen: {
+      y: 10,
+      transition: {
+        type: "spring",
+        bounce: 0.5,
+        duration: 1.3,
+      },
+    },
+  }
+
+  const onScrollMotionOptions = {
+    initial: "offscreen",
+    whileInView: "onscreen",
+    viewport: { amount: 0.8 },
+    variants: variants
+  }
 
   return (
     <main className="homepage">
       <article id="about-me">
-        <h1 className="shadow-text">About me</h1>
         <div className="intro-text">
+          <motion.h1
+            {...onScrollMotionOptions}
+            className="shadow-text"
+          >
+            About me
+          </motion.h1>
           <h1>Hey there!</h1>
           <hr/>
           <p>I'm <b>Irina</b>, an aspiring full-stack developer based in Seoul. As the IT industry evolves rapidly,
@@ -135,7 +164,11 @@ export default function Homepage() {
             <button type="button" className="basic-btn">Download CV</button>
           </a>
         </div>
-        <img src={ProfileImg} alt="profile" height={600}/>
+
+        <motion.img
+          {...onScrollMotionOptions}
+          src={ProfileImg} alt="profile" height={600}
+        />
       </article>
 
       <article id="skills">
@@ -148,7 +181,7 @@ export default function Homepage() {
           <hr/>
         </div>
         <div className="skills-summary">
-          <p>Since 2021, I've had the opportunity to contribute to over <strong>13 various projects</strong>,
+          <p>Since 2021, I've had the opportunity to contribute to over <strong>15 various projects</strong>,
             mostly working on the development of administration and monitoring systems for businesses.</p>
           <p> My current passion lies in React.js, making front-end development and website publishing my areas of
             expertise.</p>
@@ -198,7 +231,7 @@ export default function Homepage() {
         <div>
           <SelectBox id={"year-select"} defaultValue={selectedYear}
                      height={144} onSelect={(year) => setSelectedYear(year)}
-                     options={["All", "2021", "2022", "2023", "2024"]}/>
+                     options={["All", "2021", "2022", "2023", "2024", "2025"]}/>
           <div className="project-filters">
             {filterNames.map((name) => (
               <FilterTag name={name} key={name} onClick={onSelectFilter}/>
