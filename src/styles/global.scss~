@@ -1,0 +1,146 @@
+@use "variables" as *;
+@use "animations" as *;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee:wght@200;300;400;600;700;800;900&display=swap");
+
+.app {
+  width: calc(100vw - 6px);
+  min-height: 100vh;
+  min-width: 1000px;
+  overflow: overlay;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.project-swiper .swiper-slide {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  @include not-selectable();
+}
+
+body {
+  margin: 0;
+  color: white;
+  background: linear-gradient(180deg, #1E2A2C 4%, #171414 21%, #161714 43%, #171414 61%, #1D2728 75%, #1E2B2D 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
+  & * {
+    font-family: "Quicksand", "Gowun Batang", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+}
+
+section {
+  min-width: 1000px;
+  min-height: 900px;
+  width: 100%;
+  overflow: overlay hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  font-weight: 600;
+  @include not-selectable();
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  word-break: keep-all;
+}
+
+h1, h2, h3, h4, p, span {
+  word-break: keep-all;
+  &:hover {
+    cursor: default;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+@include media(mobile) {
+  .app, .homepage {
+    min-width: 400px;
+  }
+  section {
+    min-width: 400px;
+  }
+}
+
+::-moz-selection {
+  color: white;
+  background: #47878F;
+}
+
+::selection {
+  color: white;
+  background: #47878F;
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  background-color: #171414 !important;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: $dark-green;
+  border: 1px solid transparent;
+  background-clip: content-box;
+  opacity: 50%;
+}
+
+::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  //background-color: $primary-pink;
+  background-color: $dark-green;
+}
+
+::-webkit-scrollbar-corner {
+  background: #171414;
+}

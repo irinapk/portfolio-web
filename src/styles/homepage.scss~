@@ -1,0 +1,358 @@
+@use "variables" as *;
+
+.homepage {
+  min-height: 3000px;
+  min-width: 1050px;
+  padding: 124px 0 80px;
+  background: linear-gradient(180deg, #1E2A2C 4%, #171414 21%, #161714 43%, #171414 61%, #1D2728 75%, #1E2B2D 100%);
+  h1 {
+    color: $light-mint;
+    font-size: 48px;
+    letter-spacing: 6px;
+  }
+  hr {
+    width: 400px;
+    border-color: #4EEAFF;
+    margin: 0 0 20px 0;
+  }
+  article {
+    position: relative;
+    padding: 0 140px;
+  }
+
+  @include media(mobile) {
+    width: 100%;
+    min-width: 400px;
+    h1 {
+      font-size: 40px;
+    }
+    hr {
+      width: 200px;
+    }
+    article {
+      padding: 0 40px;
+    }
+  }
+}
+
+#about-me {
+  @include flex(flex-start, space-between);
+  margin: 70px 0 80px;
+  img {
+    margin-right: 20px;
+    filter: grayscale(0.5);
+    &:hover {
+      transition: 300ms ease-out;
+      filter: none;
+      cursor: url("/images/emoji.svg"), auto;
+    }
+  }
+
+  .shadow-text {
+    top: -80px;
+    left: 20px;
+    white-space: nowrap;
+  }
+
+  @include media(mobile) {
+    margin: 20px 0 50px;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 20px;
+    .intro-text {
+      max-width: calc(100% - 40px);
+      .shadow-text {
+        top: -50px;
+        font-size: 80px !important;
+      }
+    }
+    img {
+      width: 80%;
+      height: auto;
+      margin-right: 0;
+    }
+  }
+}
+
+.intro-text {
+  position: relative;
+  max-width: 660px;
+  margin: 80px 0 40px;
+  @include flex(flex-start, flex-start, column);
+  gap: 24px;
+  p {
+    font-size: 18px;
+    @include media(mobile) {
+      font-size: 16px;
+    }
+  }
+  a {
+    margin: 62px 35px 0 auto;
+  }
+  button {
+    box-shadow: 4px 4px 4px 0 #69D4E225;
+  }
+}
+
+.arrow-page-down {
+  animation: floating-arrow 2s ease-in-out infinite;
+}
+
+#skills {
+  @include flex(flex-start, flex-start, column);
+  margin-top: 40px;
+  .skills-summary {
+    position: relative;
+    padding: 10px 0 40px;
+    @include flex(flex-start, flex-start, column);
+    p {
+      font-size: 18px;
+      @include media(mobile) {
+        font-size: 16px;
+      }
+      max-width: 980px;
+    }
+  }
+}
+
+.skills-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  & > div {
+    position: relative;
+    @include flex(center, space-evenly);
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 120px 30px 40px 30px;
+    &:first-of-type, &:last-of-type {
+      grid-column: span 2;
+    }
+    border: 1px solid $light-mint;
+
+    & > h2 {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 20px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      border-bottom: 1px solid $light-mint;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.sns-box {
+  height: 330px;
+  margin-top: 20px;
+  @include flex();
+  //background: linear-gradient(0deg, transparent 0%,
+  //        rgba(137, 229, 242, 0.05) 22%,
+  //        rgba(137, 229, 242, 0.15) 50%,
+  //        rgba(137, 229, 242, 0.05) 77%, transparent 100%);
+  background: linear-gradient(0deg, transparent 0%, rgba(137, 229, 242, 0.06) 50%, transparent 100%);
+  gap: 15px;
+  & i {
+    font-size: 35px;
+    color: black;
+    &:hover {
+      //color: $primary-purple;
+      color: $light-mint;
+      cursor: pointer;
+    }
+  }
+  & svg:hover {
+    cursor: pointer;
+    & path:nth-child(2) {
+      fill: $light-mint;
+    }
+  }
+}
+
+.header-title {
+  position: relative;
+  padding-top: 70px;
+  @include media(mobile) {
+    overflow-x: hidden;
+    .shadow-text {
+      top: 20px;
+      left: 40px;
+      font-size: 80px !important;
+    }
+  }
+}
+
+#projects, #personal-blog {
+  margin-top: 40px;
+  min-height: 400px;
+}
+
+#projects {
+  .arrow-page-down {
+    @include flex();
+  }
+  & > div:nth-child(3) {
+    width: 100%;
+    @include flex(flex-start, flex-start, column);
+    gap: 20px;
+  }
+}
+
+.project-filters {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.prj-box {
+  height: 400px;
+  width: 100%;
+  border: 1px solid $light-mint;
+  cursor: pointer;
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+  }
+  .hover-bg-effect {
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-duration: 200ms;
+    display: flex;
+    flex-direction: column;
+    padding: 45px 60px;
+    & > * {
+      display: none;
+    }
+    & > h1 {
+      max-width: 420px;
+      font-size: 46px;
+      //font-family: "Bungee";
+      color: #FFF;
+      letter-spacing: 0;
+    }
+  }
+
+  &:hover {
+    .hover-bg-effect {
+      width: 100%;
+      opacity: 1;
+      background: linear-gradient(to right, rgba(62,84,87,1), rgba(62,84,87,.3));
+      transition-duration: 200ms;
+      & > * {
+        display: block;
+      }
+    }
+  }
+
+  @include media(mobile) {
+    height: 220px;
+    .hover-bg-effect > h1 {
+      max-width: 300px;
+      font-size: 24px;
+    }
+  }
+}
+
+
+#personal-blog {
+  padding-bottom: 120px;
+  .arrow-page-down {
+    @include flex(center, flex-end);
+  }
+}
+
+.blog-swiper {
+  width: 100%;
+  padding-bottom: 40px !important;
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 8px 4px #69D4E2;
+    background: #69D4E2;
+    margin: 0 10px !important;
+  }
+}
+
+.blog-box {
+  width: 100%;
+  min-width: 400px;
+  height: 600px;
+  border: 1px solid $light-mint;
+  &:hover {
+    cursor: pointer;
+    border-color: $light-red;
+    box-shadow: 0 0 10px 5px #DF1F2A30;
+  }
+}
+
+
+#contact-me {
+  margin-top: 100px;
+
+  & > div:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    & > div {
+      flex: 1;
+      min-width: 400px;
+      padding-top: 30px;
+      img {
+        margin-top: 40px;
+      }
+    }
+    & > div:nth-child(1) {
+      p {
+        max-width: 600px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        @include media(mobile) {
+          font-size: 16px;
+        }
+      }
+    }
+    & > div.email-form {
+      @include flex(flex-end, flex-start, column);
+      gap: 30px;
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid $light-mint;
+        background: #AEF5FF20;
+        color: white;
+        font-size: 18px;
+        padding: 14px 24px;
+        &:focus, &:focus-visible {
+          outline: none;
+          border: 1px solid $light-mint;
+        }
+      }
+    }
+
+    @include media(mobile) {
+      & > div {
+        min-width: 100%;
+      }
+    }
+  }
+}

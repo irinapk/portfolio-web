@@ -1,0 +1,101 @@
+@use "sass:math";
+@import "variables";
+
+@mixin circle {
+  border-radius: 50%;
+  position: absolute;
+  background-color: $primary-blue;
+  opacity: 0.5;
+  margin: 10px;
+  z-index: 0;
+  @include flex-box;
+  animation: floating 5s ease-in-out infinite;
+}
+
+.circle {
+  @include circle;
+}
+
+@for $i from 1 through 6 {
+  @each $key, $val in $colors {
+    .circle-#{$i}-#{$key} {
+      @include circle;
+      animation-delay: $i * 1s;
+      background-color: $val;
+    }
+  }
+}
+
+.hole {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.floating {
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@mixin scaling-btn {
+  animation: scaling 2s ease-in-out infinite;
+  animation-name: scaling;
+  animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  25% {
+    transform: translate(math.random(4) * 5px, math.random(4) * 10px);
+  }
+  50% {
+    transform: translate(math.random(4) * 5px, math.random(2) * 10px);
+  }
+  75% {
+    transform: translate(math.random(4) * 5px, math.random(4) * 10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+@keyframes floating-arrow {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeInAnimation 500ms ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
