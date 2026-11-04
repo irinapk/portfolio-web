@@ -1,18 +1,168 @@
 {
-  "HeyThere": "<h1 class='intro-heading'>Hey there!\n\nI am <span style=color:#8558b2>Irina</span>, an aspired junior <span style=color:#8558b2>frontend</span> developer based in Seoul, South Korea.</h1>",
-  "Biography": {
-    "First": "After graduating university back in 2019, I've worked as a freelancer for global marketing firm, then joined a sales management team at IT solution company. That was where it all started.",
-    "Second": "In 2021, I discovered this new passion for programming, learned to code and began to pursue a dream of becoming a software developer. Although my first PO was Java, today I want to focus more on mastering my frontend skills to build web applications that would be easy to navigate and pleasant to use."
+  "nav": {
+    "work": "Work",
+    "journey": "Journey",
+    "stack": "Stack",
+    "off": "Off the clock",
+    "contact": "Contact",
+    "talk": "Let's talk",
+    "top": "Irina Park, back to top",
+    "lang": "Switch language"
   },
-  "ProjectDescription": {
-    "Felicity": "a personal study project - a simple minimalistic web application for team collaboration and task management",
-    "AdminPortal": "admin portal for homepage content management such as uploading and removing images, videos and new articles",
-    "GuardianPortal": "company's homepage and Guardian-CCS management portal to view user activities, login data and control settings",
-    "DevelopersSite": "a website for developers to share API and other technical documentation",
-    "MoySklad": "clone website - a group study project to practice backend and frontend development as well as team work"
+  "chapters": {
+    "hero": "Hello",
+    "journey": "Journey",
+    "work": "Work",
+    "stack": "Stack",
+    "offclock": "Off the clock",
+    "contact": "Contact"
   },
-  "Conclusion": {
-    "First": "I love food, animals and music. I also enjoy exploring new places and spending quality time with my family, friends and my cat. During my free time I like watching movies, and sometimes I try to teach myself playing guitar or I read books (psychology, novels, fantasy, etc.)",
-    "Second": "Thank you for your interest! If you would like to ask any questions or to chat, feel free to email me or find me on social media ^^"
+  "hero": {
+    "chip": "Frontend developer · Seoul, KR",
+    "title": "I turn complex systems<br/>into <em>clear</em> interfaces.",
+    "lede": "Frontend developer with five years of building monitoring dashboards for power plants and steel mills, admin platforms, security portals and consumer apps.",
+    "cta1": "See selected work",
+    "cta2": "Download CV",
+    "scroll": "Scroll to explore",
+    "stat1": "years shipping UI",
+    "stat2": "projects delivered",
+    "stat3": "teams · energy → fintech"
+  },
+  "journey": {
+    "label": "Journey",
+    "title": "From sales desk <em>to</em> source code",
+    "lede": "A marketing and sales background taught me how people actually use software. In 2021 I learned to code, and I haven't stopped shipping since.",
+    "items": [
+      {
+        "year": "2019",
+        "company": "Freelance",
+        "title": "Graduated, then marketing for a global firm",
+        "text": "Freelance work for a global marketing company. Writing for real audiences, on deadline."
+      },
+      {
+        "year": "2020",
+        "company": "IT solutions company",
+        "title": "Sales management, close to the product",
+        "text": "Joined a sales management team. Watching customers struggle with enterprise software is where it all started."
+      },
+      {
+        "year": "2021",
+        "company": "FNS Value",
+        "title": "Learned to code. Shipped a Next.js migration.",
+        "text": "Java was my first language. Months later I was rebuilding the Guardian-CCS homepage and portal in React and Next.js."
+      },
+      {
+        "year": "2022",
+        "company": "FNS Value",
+        "title": "An admin portal from zero",
+        "text": "Planned and built the Guardian admin portal with designers and backend developers, plus a Docusaurus docs site for overseas teams."
+      },
+      {
+        "year": "2023",
+        "company": "SimBiz Korea · TechDas",
+        "title": "Enterprise scale, then industrial systems",
+        "text": "Migrated SK Shieldus' ERP to React, then moved to industrial monitoring: sensor validation, FSRU operations and gas-pressure monitoring."
+      },
+      {
+        "year": "2024",
+        "company": "TechDas · Mellowing · Yaong · RyznSquare",
+        "title": "Steel, power, rewards and Vue",
+        "text": "Monitoring systems for POSCO and Hyundai Steel, a TypeScript + GraphQL admin, a full-stack rewards app on AWS and a Vue 3 QA tool."
+      },
+      {
+        "year": "2026",
+        "company": "Now",
+        "title": "Making data-heavy UI easy to use",
+        "text": "Renewing this portfolio and choosing what to build next."
+      }
+    ]
+  },
+  "work": {
+    "label": "Selected work",
+    "title": "Work that runs <em>real</em> things",
+    "lede": "Power plants, steel mills, passwordless security and rewards apps. Open any project to see the details and screens.",
+    "chapter": "Chapter",
+    "featTitle": "Industrial monitoring, made <em>readable</em>",
+    "featText": "Seven monitoring and optimization systems for POSCO, Hyundai Steel and energy operators. Emissions, sensor data and equipment efficiency on dashboards an operator can read at a glance.",
+    "all": "All",
+    "filterLabel": "Filter projects",
+    "count_one": "{{count}} project",
+    "count_other": "{{count}} projects"
+  },
+  "modal": {
+    "overview": "Overview",
+    "did": "What I did",
+    "gallery": "Screens",
+    "prev": "Previous",
+    "next": "Next",
+    "close": "Close project"
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "A toolkit <em>in orbit</em>",
+    "lede": "Three rings around one core. Hover or tap a ring to see what's on it: the inner ring is my everyday frontend work, the outer one is what lets me ship end to end.",
+    "rings": [
+      "Frontend core",
+      "Interface & data",
+      "Backend & shipping"
+    ]
+  },
+  "off": {
+    "label": "Off the clock",
+    "title": "The person <em>behind</em> the commits",
+    "lede": "Food, animals and music first. Then new places, good books and time with family, friends and my cat.",
+    "photo": "Hover for colour",
+    "photoAlt": "Irina Park sitting on a stool, smiling",
+    "tiles": {
+      "food": {
+        "title": "Food, always",
+        "text": "I'll plan a whole weekend around one good bowl of noodles."
+      },
+      "cat": {
+        "title": "My cat",
+        "text": "Senior reviewer of everything on my keyboard."
+      },
+      "music": {
+        "title": "Music & guitar",
+        "text": "Teaching myself guitar, one stubborn chord at a time."
+      },
+      "books": {
+        "title": "Books",
+        "text": "Psychology, novels and fantasy."
+      },
+      "movies": {
+        "title": "Movies",
+        "text": "The default plan for a free evening."
+      },
+      "places": {
+        "title": "New places",
+        "text": "Wandering somewhere I've never been."
+      },
+      "people": {
+        "title": "Family & friends",
+        "text": "Quality time, ideally around good food."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's build something together.",
+    "copy": "Copy email",
+    "copied": "Email copied",
+    "blocked": "Couldn't copy. Select the address instead.",
+    "made": "Designed & built in Seoul · React + Three.js",
+    "local": "Local time",
+    "drag": "Click & drag to spin"
+  },
+  "lightbox": {
+    "label": "{{title}} screens",
+    "open": "View full size",
+    "badge": "View full size",
+    "actual": "Actual size",
+    "fit": "Fit to screen",
+    "close": "Close viewer",
+    "prev": "Previous image",
+    "next": "Next image",
+    "hint": "Click the image to zoom · ← → to browse · Esc to close"
   }
 }

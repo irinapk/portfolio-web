@@ -1,0 +1,40 @@
+// Portfolio 2026 tokens. Palette evolved from the original site (variables.scss).
+$bg: #0f1314;
+$raised: #151d1f;
+$surface: #1e2a2c;
+$line: rgba(238, 246, 247, 0.08);
+$line-2: rgba(238, 246, 247, 0.14);
+
+$mint: #69d4e2;
+$mint-2: #84e1ee;
+$mint-3: #aef5ff;
+$mint-4: #ddfbff;
+$glow: #4eeaff;
+$lilac: #d0bdf4;
+$chili: #e44c63;
+
+$text: #eef6f7;
+$text-2: #9aaeb1;
+$text-3: #5e7376;
+
+$f-display: "Blinker", "Noto Sans KR", system-ui, sans-serif;
+$f-serif: "Instrument Serif", Georgia, serif;
+$f-body: "Manrope", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+$f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+$ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+$gutter: clamp(20px, 6vw, 120px);
+
+$bp-tablet: 1100px;
+$bp-mobile: 820px;
+
+@mixin tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
